@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies catalog</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-white">
+
+<div class="container py-4">
+  <h1 class="text-center fw-semibold mb-4">Movies catalog</h1>
+
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <form id="filterForm">
+        <div class="mb-3">
+          <label class="form-label">Genre</label>
+          <select class="form-select" id="genreSelect">
+            <option>All</option>
+            <option>Action</option>
+            <option>Drama</option>
+            <option>Adventure</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Year</label>
+          <select class="form-select" id="yearSelect">
+            <option>All</option>
+            <option>2005</option>
+            <option>2012</option>
+            <option>2015</option>
+            <option>2018</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Type</label>
+          <select class="form-select" id="typeSelect">
+            <option>All</option>
+            <option>Movie</option>
+            <option>Series</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rating (high to low)</label>
+          <select class="form-select" id="sortSelect">
+            <option>Rating (high to low)</option>
+            <option>Rating (low to high)</option>
+            <option>Year (newest)</option>
+            <option>Year (oldest)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Search</button>
+      </form>
+
+      <h5 class="mt-4 mb-3">Bookmarked movies</h5>
+      <div id="bookmarkList">
+        <div class="mb-3">
+          <span class="d-block mb-1 fs-6">Avengers: Infinity War</span>
+          <button class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <div class="mb-3">
+          <span class="d-block mb-1 fs-6">The Avengers</span>
+          <button class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <div class="mb-3">
+          <span class="d-block mb-1 fs-6">Avengers: Age of Ultron</span>
+          <button class="btn btn-danger btn-sm">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <h4 class="mb-3">Search results</h4>
+      <div class="alert alert-info" id="hintAlert">
+        Use the form on the left to search for a movie.
+      </div>
+
+      <div class="row" id="movieGrid">
+
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9">
+            <img src="imges/avengers_infinity_war.jpg" class="rounded object-fit-cover" alt="Avengers: Infinity War">
+          </div>
+          <h6 class="mt-2 mb-1">Avengers: Infinity War</h6>
+          <div class="text-body small my-1"><i class="fa-regular fa-calendar me-1"></i> 2018</div>
+          <div class="text-body small my-1 text-warning"><i class="fa-solid fa-star me-1"></i> <span class="text-body">8.7</span></div>
+          <div class="d-flex gap-2 mt-2">
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Watch trailer</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">More info</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Bookmarked</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9">
+            <img src="imges/the_avengers_2012.jpg" class="rounded object-fit-cover" alt="The Avengers">
+          </div>
+          <h6 class="mt-2 mb-1">The Avengers</h6>
+          <div class="text-body small my-1"><i class="fa-regular fa-calendar me-1"></i> 2012</div>
+          <div class="text-body small my-1 text-warning"><i class="fa-solid fa-star me-1"></i> <span class="text-body">8.1</span></div>
+          <div class="d-flex gap-2 mt-2">
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Watch trailer</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">More info</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Bookmarked</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9">
+            <img src="imges/avengers_age_of_ultron.jpg" class="rounded object-fit-cover" alt="Avengers: Age of Ultron">
+          </div>
+          <h6 class="mt-2 mb-1">Avengers: Age of Ultron</h6>
+          <div class="text-body small my-1"><i class="fa-regular fa-calendar me-1"></i> 2015</div>
+          <div class="text-body small my-1 text-warning"><i class="fa-solid fa-star me-1"></i> <span class="text-body">7.6</span></div>
+          <div class="d-flex gap-2 mt-2">
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Watch trailer</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">More info</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Bookmarked</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="ratio ratio-16x9">
+            <img src="imges/kingdom_of_heaven.jpg" class="rounded object-fit-cover" alt="Kingdom of Heaven">
+          </div>
+          <h6 class="mt-2 mb-1">Kingdom of Heaven</h6>
+          <div class="text-body small my-1"><i class="fa-regular fa-calendar me-1"></i> 2005</div>
+          <div class="text-body small my-1 text-warning"><i class="fa-solid fa-star me-1"></i> <span class="text-body">7.2</span></div>
+          <div class="d-flex gap-2 mt-2">
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Watch trailer</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">More info</button>
+            <button class="btn btn-outline-info btn-sm rounded-pill px-3">Bookmark</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
